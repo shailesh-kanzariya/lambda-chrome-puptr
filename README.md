@@ -9,10 +9,10 @@ High level steps:
 - Clone this repo
 - Run `npm install`
 - Ensure to modify AWS S3 bucket name for `scrnshotsBucket` to your bucket name in `serverless.yml`
-- Verify AWS region in `serverless.yml` where you want deploy
+- Verify AWS region in `serverless.yml` where you want deploy. And ensure value of `layers` i.e. "arn:aws:lambda:`us-east-1`:764866452798:layer:chrome-aws-lambda:10" matches with your AWS region as well
 - Run `sls deploy --aws-profile` *your-aws-profile-name*
 - This should have deployed AWS Lambda and have attached Lambda Layer with it
-- Now to test lambda, enter `{ "url": "https://www.apple.com/" }` as lambda input where `url` contains website-name of which the screenshot to be captured and uploaded to S3
+- Now to test lambda, enter `{ "url": "https://pptr.dev/" }` as lambda input where `url` contains website-name of which the screenshot to be captured and uploaded to S3
 - On succsessful lambda run, it returns publicly accessible **screeshot-url**
 - Please Note: This code, for demostration purpose, makes AWS S3 bucket publicly accessible. Please modify it as per your requirements.
 
